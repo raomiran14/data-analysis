@@ -1,0 +1,14 @@
+import pandas as pd
+data={
+    "name":['ali',None,'amjad','faizan','subhan','tanveer','hasin','salman'],
+     "age":[25,None,33,23,34,45,55,36],
+    "salary":[25000,None,50000,65000,28000,22000,55000,45000],
+    "performancescore":[80,None,95,88,66,78,94,83]
+}
+df=pd.DataFrame(data)
+print(df)
+#df.fillna(0,inplace=True)
+#print(df)
+df["age"] =df["age"].fillna(df["age"].mean())
+df["salary"]=df["salary"].fillna(df["salary"].mean())
+print(df)
